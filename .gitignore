@@ -1,0 +1,4 @@
+.clang-format
+CMakeLists.txt
+cmake-build-debug
+.idea

@@ -1,21 +1,29 @@
 #include <stdio.h>
 
-static int is_it_printable(char c) {
-    return (c >= 32 && c <= 126);
+size_t ft_strlen(const char *s) {
+    size_t i;
+
+    i = 0;
+    while (s[i])
+        i++;
+    return (i);
 }
 
-int main() {
-    char c;
-
-    c = 'x';
-
-    printf("The value of is_it_printable('x') is %d\n", is_it_printable(c));
-
-    if (is_it_printable(c)) {
-        printf("'%c' is printable\n", c);
-    } else {
-        printf("'%c' is not printable\n", c);
+size_t ft_strlcpy(char *dst, const char *src, size_t size) {
+    size_t i;
+    if (size == 0)
+        return (ft_strlen(src));
+    i = 0;
+    while (src[i] && i < size - 1) {
+        dst[i] = src[i];
+        i++;
     }
+    dst[i] = '\0';
+    return (ft_strlen(src));
+}
+
+
+int main(void) {
 
     return 0;
 }
