@@ -6,7 +6,7 @@
 /*   By: mouad <mouad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:14:23 by mouad             #+#    #+#             */
-/*   Updated: 2023/11/04 17:16:05 by mouad            ###   ########.fr       */
+/*   Updated: 2023/11/04 17:39:41 by mouad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	while (s1[i] && s2[i])
 	{
-		if (s1[i] != s2[i])
+		if (s1[i] != s2[i] || i >= n - 1)
 		{
-			return (s1[i] - s2[i]);
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		}
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
