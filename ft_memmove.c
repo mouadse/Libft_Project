@@ -31,7 +31,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else
 	{
 		while (len--)
-            *lastd-- = *lasts--;
+			*lastd-- = *lasts--;
 	}
 	return (dst);
 }
