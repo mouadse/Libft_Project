@@ -6,7 +6,7 @@
 /*   By: msennane <msennane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 01:45:37 by msennane          #+#    #+#             */
-/*   Updated: 2023/11/06 01:50:53 by msennane         ###   ########.fr       */
+/*   Updated: 2023/11/06 02:08:40 by msennane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*lasts;
 	char	*lastd;
 
+	if (!dst && !src)
+		return (NULL);
 	d = (char *)dst;
 	s = (char *)src;
 	lasts = s + (len - 1);
