@@ -6,15 +6,15 @@
 /*   By: msennane <msennane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:32:13 by msennane          #+#    #+#             */
-/*   Updated: 2023/11/05 15:39:54 by msennane         ###   ########.fr       */
+/*   Updated: 2023/11/25 17:41:36 by msennane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int result;
+	int	i;
+	int	sign;
+	int	result;
 
 	i = 0;
 	sign = 1;
