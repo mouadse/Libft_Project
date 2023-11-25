@@ -6,7 +6,7 @@
 /*   By: msennane <msennane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:09:56 by msennane          #+#    #+#             */
-/*   Updated: 2023/11/25 17:13:53 by msennane         ###   ########.fr       */
+/*   Updated: 2023/11/25 17:14:29 by msennane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + s_len);
 		s_len--;
 	}
+	return (NULL);
 }
