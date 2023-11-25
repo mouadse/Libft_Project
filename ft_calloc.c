@@ -6,7 +6,7 @@
 /*   By: msennane <msennane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 19:29:09 by msennane          #+#    #+#             */
-/*   Updated: 2023/11/06 03:05:17 by msennane         ###   ########.fr       */
+/*   Updated: 2023/11/25 17:42:07 by msennane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char *ptr;
-	size_t i;
+	char	*ptr;
+	size_t	i;
 
 	ptr = malloc(count * size);
 	if (!ptr)
