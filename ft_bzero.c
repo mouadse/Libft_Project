@@ -6,7 +6,7 @@
 /*   By: msennane <msennane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:29:57 by msennane          #+#    #+#             */
-/*   Updated: 2023/11/05 19:41:03 by msennane         ###   ########.fr       */
+/*   Updated: 2023/11/27 01:38:47 by msennane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*t;
 
-	if (s == NULL)
-		return ;
+	t = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		((char *)s)[i] = 0;
+		t[i] = 0;
 		i++;
 	}
 }
