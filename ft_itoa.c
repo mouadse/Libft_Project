@@ -6,67 +6,57 @@
 /*   By: msennane <msennane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 03:05:55 by msennane          #+#    #+#             */
-/*   Updated: 2023/11/08 03:05:58 by msennane         ###   ########.fr       */
+/*   Updated: 2023/11/27 01:52:15 by msennane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	number_of_digits(int n);
-static char	*fill_string(char *result, long num, int len, int n);
+static int	calculate_len(int n)
+{
+	int	len;
+
+	len = 0;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+static void	gen_char_array(char *int_str, long number, int len, int sign)
+{
+	while (number && len--)
+	{
+		int_str[len + sign] = (number % 10) + 48;
+		number /= 10;
+	}
+}
 
 char	*ft_itoa(int n)
 {
-	char	*result;
+	int		sign;
 	int		len;
-	long	num;
+	char	*int_str;
+	long	number;
 
-	num = n;
-	len = number_of_digits(n);
-	if (n < 0)
-		num = num * -1;
-	result = malloc(sizeof(char) * (len + 1));
-	if (!result)
-		return (NULL);
-	result[len] = '\0';
+	number = (long)n;
 	if (n == 0)
-	{
-		result[0] = '0';
-	}
-	else
-	{
-		result = fill_string(result, num, len, n);
-	}
-	return (result);
-}
-
-static char	*fill_string(char *result, long num, int len, int n)
-{
-	while (num > 0)
-	{
-		result[len - 1] = (num % 10) + '0';
-		num = num / 10;
-		len--;
-	}
+		return (ft_strdup("0"));
+	sign = 0;
 	if (n < 0)
-		result[0] = '-';
-	return (result);
-}
-
-static int	number_of_digits(int n)
-{
-	int	count;
-
-	count = 0;
-	if (n <= 0)
 	{
-		count++;
-		n = n * -1;
+		sign = 1;
+		number = -number;
 	}
-	while (n > 0)
-	{
-		n = n / 10;
-		count++;
-	}
-	return (count);
+	len = calculate_len(number);
+	int_str = (char *)malloc(sizeof(char) * (len + sign + 1));
+	if (!int_str)
+		return (NULL);
+	if (sign)
+		int_str[0] = '-';
+	int_str[len + sign] = '\0';
+	gen_char_array(int_str, number, len, sign);
+	return (int_str);
 }
